@@ -1,0 +1,56 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Create New Client</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <form [formGroup]="clientForm" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="outline">
+        <mat-label>Shared Key</mat-label>
+        <input matInput formControlName="sharedKey">
+        <mat-error *ngIf="clientForm.get('sharedKey')?.errors?.required">
+          Shared key is required
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Business ID</mat-label>
+        <input matInput formControlName="businessId">
+        <mat-error *ngIf="clientForm.get('businessId')?.errors?.required">
+          Business ID is required
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" formControlName="email">
+        <mat-error *ngIf="clientForm.get('email')?.errors?.required">
+          Email is required
+        </mat-error>
+        <mat-error *ngIf="clientForm.get('email')?.errors?.email">
+          Please enter a valid email address
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Phone</mat-label>
+        <input matInput formControlName="phone">
+        <mat-error *ngIf="clientForm.get('phone')?.errors?.required">
+          Phone is required
+        </mat-error>
+        <mat-error *ngIf="clientForm.get('phone')?.errors?.pattern">
+          Phone must contain only numbers
+        </mat-error>
+      </mat-form-field>
+
+      <div class="button-container">
+        <button mat-raised-button type="button" (click)="onCancel()">
+          Cancel
+        </button>
+        <button mat-raised-button color="primary" type="submit" [disabled]="!clientForm.valid">
+          Create Client
+        </button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card> 

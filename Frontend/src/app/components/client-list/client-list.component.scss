@@ -1,0 +1,70 @@
+.mat-card {
+  margin: 20px;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+
+  mat-form-field {
+    flex: 1;
+  }
+}
+
+.advanced-search {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+
+  mat-form-field {
+    flex: 1;
+  }
+}
+
+.button-container {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+table {
+  width: 100%;
+}
+
+.mat-row:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+.mat-column-sharedKey {
+  width: 25%;
+}
+
+.mat-column-businessId {
+  width: 25%;
+}
+
+.mat-column-email {
+  width: 30%;
+}
+
+.mat-column-phone {
+  width: 20%;
+}
+
+@media (max-width: 768px) {
+  .search-container,
+  .advanced-search {
+    flex-direction: column;
+  }
+
+  .button-container {
+    flex-wrap: wrap;
+    
+    button {
+      flex: 1;
+      min-width: 120px;
+    }
+  }
+} 
